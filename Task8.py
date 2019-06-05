@@ -1,36 +1,35 @@
-class E :
-    def __init__(self,lists):
-        self.lists = lists
+class prime:
+    def __init__(self,o):
+      self.o = o
     def __str__(self):
-        if len(self.lists) == 1:
-            return(str(self.lists[0]))
-        if len(self.lists) == 4 and self.lists[0] == 'if' :
-            return (str(self.lists[0]) +" " + "(" + " " + str(self.lists[1]) + " " + ")" + " " + str(self.lists[2]) + " " + str(self.lists[3]))
-        elif len(self.lists) >= 2:
-            return("(" + " " + str(self.lists[0]) + " " +  str(self.lists[1]) + " " + str(self.lists[2])+ " " + ")")
-class V:
-    def __init__(self,val):
-      self.val = val
-    def __str__ (self):
-        if isinstance(self.val,(int,float,bool)) :
-            return(str(self.val))
-        if isinstance(self.val,str) :
-            return(str(self.val))
-class prim:
-    def __init__(self,oper):
-      self.oper = oper
-    def __str__(self):
-        if len(self.oper) == 1:
-            return(str(self.oper[0]))
-        elif len(self.oper) >= 2:
-            # print(self.oper)
+        if len(self.o) == 1:
+            return(str(self.o[0]))
+        elif len(self.o) >= 2:
             string = " "
-            for i in range(len(self.oper)):
-                string = string + str(self.oper[i])
+            for i in range(len(self.o)):
+                string = string + str(self.o[i])
             
         return("(" +" " + string +" "+ ")")
-print(E(["perk"]))
-print(E(["if","< 4 5",3,4]))
-print(E(["<",3,4 ]))
-print(prim([">="]))
-print(prim(["<=", 1, 2 ] ) )
+class v:
+    def __init__(self,value):
+      self.value = value
+    def __str__ (self):
+        if isinstance(self.value,(int,float,bool)) :
+            return(str(self.value))
+        if isinstance(self.value,str) :
+            return(str(self.value))
+class e :
+    def __init__(self,list):
+        self.list = list
+    def __str__(self):
+        if len(self.list) == 1:
+            return(str(self.list[0]))
+        if len(self.list) == 4 and self.list[0] == 'if' :
+            return (str(self.list[0]) +" " + "(" + " " + str(self.list[1]) + " " + ")" + " " + str(self.list[2]) + " " + str(self.list[3]))
+        elif len(self.list) >= 2:
+            return("(" + " " + str(self.list[0]) + " " +  str(self.list[1]) + " " + str(self.list[2])+ " " + ")")
+print(e(["perk"]))
+print(e(["if","< 11 9",8,5]))
+print(e(["<",6,9 ]))
+print(prime([">="]))
+print(prime(["<=", 4, 5 ] ) )
